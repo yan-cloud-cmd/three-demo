@@ -6,24 +6,66 @@
   <style>
     body { margin: 0; overflow: hidden; }
     canvas { display: block; }
+    #toggleFollow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      padding: 10px 15px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #infoPanel {
+      position: fixed;
+      top: 50px;
+      right: 10px;
+      width: 280px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      font-family: sans-serif;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    #infoPanel h3 {
+      margin-top: 0;
+    }
+    #pointList {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    #pointList li {
+      cursor: pointer;
+      padding: 6px 8px;
+      border-bottom: 1px solid #ccc;
+      transition: background-color 0.3s;
+    }
+    #pointList li:hover {
+      background-color: #ffd9a8;
+    }
+    #pointDetail {
+      margin-top: 12px;
+      font-size: 0.9em;
+      color: #333;
+      min-height: 40px;
+    }
   </style>
-  <script type="module" crossorigin src="./assets/index-BM0vpvt-.js"></script>
+  <script type="module" crossorigin src="./assets/index-CV3b8vm5.js"></script>
 </head>
 <body>
-  <button id="toggleFollow" style="
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  padding: 10px 15px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-">
-  开启相机跟随
-</button>
+  <button id="toggleFollow">开启相机跟随</button>
+
+  <div id="infoPanel">
+    <h3>迁徙路线注记</h3>
+    <ul id="pointList"></ul>
+    <div id="pointDetail">点击左侧列表查看详情</div>
+  </div>
 
 </body>
 </html>
